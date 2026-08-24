@@ -1,0 +1,16 @@
+meta {
+  name: liste des todos
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8080/todos
+  body: none
+  auth: basic
+}
+
+auth:basic {
+  username: bastien@example.com
+  password: tacostacos
+}
