@@ -53,6 +53,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .csrf(csrf -> csrf.disable()) // Désactive CSRF pour cette application
+                .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
                         // Accessible sans authentification
                         .requestMatchers("/auth/**").permitAll()
