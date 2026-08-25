@@ -25,14 +25,14 @@ public class TodoController {
     }
 
     // Accessible par ROLE_USER et ROLE_ADMIN
-    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('SCOPE_ROLE_USER', 'SCOPE_ROLE_ADMIN')")
     @GetMapping("")
     public List<TodoEntity> getAll() {
         return this.todoRepository.findAll();
     }
 
     // Accessible par ROLE_ADMIN uniquement
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasAuthority('SCOPE_ROLE_ADMIN')")
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public TodoEntity create(@RequestBody TodoEntity entity) {

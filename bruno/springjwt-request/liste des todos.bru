@@ -7,10 +7,9 @@ meta {
 get {
   url: http://localhost:8080/todos
   body: none
-  auth: basic
+  auth: bearer
 }
 
-auth:basic {
-  username: bastien@example.com
-  password: tacostacos
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJleHAiOjE3ODc2NDYxMDYsImlhdCI6MTc4NzY0MjUwNiwic2NvcGUiOiJST0xFX0FETUlOIEZBQ1RPUl9QQVNTV09SRCJ9.6A9-_rz2C3oyR4RMmWjb27mgXd1fzbGFTI8OkwQkqgU
 }
